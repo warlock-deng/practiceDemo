@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'com.demo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        url 'http://172.17.0.59:8081/nexus/content/groups/public'
+    }
+    maven {
+        url 'http://maven.zhaopin.com:8000/nexus/content/groups/public'
+    }
+    maven {
+        url 'https://jfrog.nutz.cn/artifactory/snapshots'
+    }
+    maven {
+        url "http://repo.spring.io/snapshot"
+    }
+    maven {
+        url "http://repo.spring.io/milestone"
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.redisson:redisson:3.10.6')
+    compile("com.zhaopin:common-http:3.5.4.RELEASE")
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
