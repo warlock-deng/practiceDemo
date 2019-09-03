@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithm.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/design.iml" filepath="$PROJECT_DIR$/.idea/modules/design.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/practiceDemo.iml" filepath="$PROJECT_DIR$/.idea/practiceDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/practiceDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/practiceDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithm/practiceDemo.algorithm.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithm/practiceDemo.algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/design/practiceDemo.design.iml" filepath="$PROJECT_DIR$/.idea/modules/design/practiceDemo.design.iml" />
     </modules>
   </component>
 </project>
