@@ -1,4 +1,4 @@
-package src.main.java.javaObject;
+package src.main.java.javaobject;
 
 /**
  * @author Warlock.deng

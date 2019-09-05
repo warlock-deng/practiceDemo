@@ -1,7 +1,6 @@
-package src.main.java.javaObject;
+package src.main.java.javaobject;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @author Warlock.deng
