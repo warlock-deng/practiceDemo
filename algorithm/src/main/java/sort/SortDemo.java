@@ -1,4 +1,4 @@
-package algorithm;
+package src.main.java.sort;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +20,6 @@ public class SortDemo {
         mapTem = map;
 
         map.put("b", 1);
-
 
 
         String c = "0";

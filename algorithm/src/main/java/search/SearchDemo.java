@@ -1,5 +1,4 @@
-package algorithm;
-
+package src.main.java.search;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -18,14 +17,15 @@ public class SearchDemo {
         List<Integer> list = Arrays.stream(tg).collect(Collectors.toList());
         Collections.sort(list);
 
-        twoPointsSearch(list.toArray(new Integer[list.size()]), 10);
+        twoPointsSearch(list.toArray(new Integer[list.size()]), 2);
     }
 
     private static void twoPointsSearch(Integer[] tg, int s) {
         int low = 0;
         int hight = tg.length - 1;
+        int mid = 0;
         while (low <= hight) {
-            int mid = (low + hight) / 2;
+            mid = (low + hight) / 2;
             if (tg[mid] < s) {
                 low = mid + 1;
             }
@@ -37,7 +37,7 @@ public class SearchDemo {
                 break;
             }
         }
-        int result = tg[low];
+        int result = tg[mid];
 
     }
 

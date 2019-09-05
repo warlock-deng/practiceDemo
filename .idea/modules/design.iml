@@ -3,7 +3,9 @@
   <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/../../algorithm" rootProjectPath="$MODULE_DIR$/../../algorithm" />
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../design" />
+    <content url="file://$MODULE_DIR$/../../design">
+      <sourceFolder url="file://$MODULE_DIR$/../../design" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
