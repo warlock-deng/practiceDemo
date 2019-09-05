@@ -15,8 +15,11 @@ public class MapDemo {
 
         Map treeMap = new TreeMap();
 
-
         Map hashTable = new Hashtable();
+
+
+
+
 
         Set set = new HashSet<Integer>();
 
