@@ -9,9 +9,13 @@ public class NumberDemo {
 
     public static void main(String[] args) {
 
+        long s = 499999999L * 499999999;
+
         parseInt("2019");
 
         // Fibonacci();
+
+        Integer.parseInt("2019");
     }
 
     private static void parseInt(String s) {
