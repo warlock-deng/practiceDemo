@@ -23,6 +23,10 @@ public class Array<T> {
         return size;
     }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
     public int getCapacity() {
         return data.length;
     }
@@ -55,6 +59,14 @@ public class Array<T> {
     public T get(int index) {
         check(index);
         return data[index];
+    }
+
+    public T getFirst() {
+        return get(0);
+    }
+
+    public T getLast() {
+        return get(size - 1);
     }
 
     public void set(int index, T t) {
@@ -91,16 +103,16 @@ public class Array<T> {
     public T remove(int index) {
         check(index);
         T t = data[index];
-//            for (int i = index + 1; i < size; i++) {
-//                data[i - 1] = data[i];
-//            }
-        if (size - index + 1 >= 0) {
-            System.arraycopy(data, index + 1, data, index, size - index + 1);
+        for (int i = index + 1; i < size; i++) {
+            data[i - 1] = data[i];
         }
-        data[size] = null;
+//        if (size - index > 1) {
+//            System.arraycopy(data, index + 1, data, index, size - index + 1);
+//        }
         size--;
-        if (size == data.length >> 2) {
-            resize(data.length >> 1);
+        data[size] = null;
+        if (size == getCapacity() >> 2 && getCapacity() << 1 != 0) {
+            resize(getCapacity() >> 1);
         }
         return t;
     }
@@ -139,9 +151,11 @@ public class Array<T> {
         sb.append(" arr is:[");
         for (int i = 0; i < size; i++) {
             sb.append(data[i]);
-            sb.append(",");
+            if (i < size - 1) {
+                sb.append(",");
+            }
         }
-        sb.append("]");
+        sb.append("] tail");
         return sb.toString();
     }
 

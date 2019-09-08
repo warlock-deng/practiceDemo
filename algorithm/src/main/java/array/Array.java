@@ -5,8 +5,6 @@ package src.main.java.array;
  * Created at 2019/9/8
  */
 public class Array<T> {
-
-
     private T[] data;
 
     private int size;
@@ -22,6 +20,10 @@ public class Array<T> {
 
     public int getSize() {
         return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
     }
 
     public int getCapacity() {
@@ -56,6 +58,14 @@ public class Array<T> {
     public T get(int index) {
         check(index);
         return data[index];
+    }
+
+    public T getFirst() {
+        return get(0);
+    }
+
+    public T getLast() {
+        return get(size - 1);
     }
 
     public void set(int index, T t) {
@@ -132,18 +142,21 @@ public class Array<T> {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder(data.length);
-        sb.append("size=" + size);
-        sb.append(" catacity=" + data.length);
+        StringBuilder sb = new StringBuilder();
+        sb.append("size=");
+        sb.append(size);
+        sb.append(" catacity=");
+        sb.append(data.length);
         sb.append(" arr is:[");
         for (int i = 0; i < size; i++) {
             sb.append(data[i]);
-            sb.append(",");
+            if (i < size - 1) {
+                sb.append(",");
+            }
         }
         sb.append("]");
         return sb.toString();
     }
-
 
 }
 
