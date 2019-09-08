@@ -1,4 +1,4 @@
-package src.main.java.javaobject;
+package src.main.java.array;
 
 import java.util.*;
 
