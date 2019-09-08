@@ -132,7 +132,7 @@ public class ArrayDemo {
 //                data[i - 1] = data[i];
 //            }
             if (size - index + 1 >= 0) {
-                System.arraycopy(data, index + 1, data, index + 1 - 1, size - index + 1);
+                System.arraycopy(data, index + 1, data, index, size - index + 1);
             }
             data[size] = null;
             size--;
