@@ -1,4 +1,4 @@
-package src.main.java.sort;
+package src.main.java.stack;
 
 /**
  * @author warlock.deng
