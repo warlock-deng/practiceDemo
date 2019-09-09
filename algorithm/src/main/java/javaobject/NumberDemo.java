@@ -11,11 +11,24 @@ public class NumberDemo {
 
         long s = 499999999L * 499999999;
 
-        parseInt("2019");
+//        parseInt("2019");
+//
+//        // Fibonacci();
+//
+//        Integer.parseInt("2019");
 
-        // Fibonacci();
 
-        Integer.parseInt("2019");
+        long t = 12007036;
+
+        long t1 = t % 20;
+
+        String str = String.valueOf(t);
+        int a = str.hashCode();
+        int a1 = Math.abs(a) >> 5;
+
+        int t2 = a1 % 20;
+
+        String test = "";
     }
 
     private static void parseInt(String s) {

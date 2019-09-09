@@ -9,6 +9,7 @@ public class StackDemo {
 
     public static void main(String[] args) {
 
+
         Queue<Integer> loopQueue = new LoopQueue<>(4);
 
         for (int i = 0; i < 10; i++) {
