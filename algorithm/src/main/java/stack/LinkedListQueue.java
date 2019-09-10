@@ -123,27 +123,4 @@ public class LinkedListQueue<E> implements Queue<E> {
         }
     }
 
-
-    private class Node {
-
-        private E e;
-
-        private Node next;
-
-        public Node() {
-            this(null, null);
-        }
-
-        public Node(E e) {
-            this(e, null);
-        }
-
-        public Node(E e, Node next) {
-            this.e = e;
-            this.next = next;
-        }
-
-    }
-
-
 }

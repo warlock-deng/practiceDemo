@@ -6,27 +6,27 @@ package src.main.java.stack;
  */
 public class LinkedList<E> {
 
-    private class Node {
+    private class ListNode {
 
         private E e;
 
-        private Node next;
+        private ListNode next;
 
-        public Node() {
+        public ListNode() {
             this(null, null);
         }
 
-        public Node(E e) {
+        public ListNode(E e) {
             this(e, null);
         }
 
-        public Node(E e, Node next) {
+        public ListNode(E e, ListNode next) {
             this.e = e;
             this.next = next;
         }
     }
 
-    private Node dummyNode;
+    private ListNode dummyNode;
 
     private int size;
 
@@ -39,7 +39,7 @@ public class LinkedList<E> {
     }
 
     public LinkedList() {
-        this.dummyNode = new Node();
+        this.dummyNode = new ListNode();
         this.size = 0;
     }
 
@@ -54,14 +54,14 @@ public class LinkedList<E> {
     public E get(int index) {
         check(index);
 
-        Node preNode = dummyNode;
+        ListNode preNode = dummyNode;
         for (int i = 0; i < index; i++) {
             preNode = preNode.next;
         }
         return preNode.e;
     }
 
-    public Node getFirstNode() {
+    public ListNode getFirstNode() {
         return dummyNode.next;
     }
 
@@ -76,12 +76,12 @@ public class LinkedList<E> {
     public void add(int index, E e) {
         check(index);
 
-        Node preNode = dummyNode;
+        ListNode preNode = dummyNode;
         for (int i = 0; i < index; i++) {
             preNode = preNode.next;
         }
 
-        Node curNode = new Node(e, preNode.next);
+        ListNode curNode = new ListNode(e, preNode.next);
         preNode.next = curNode;
         size++;
     }
@@ -97,12 +97,12 @@ public class LinkedList<E> {
     public E remove(int index) {
         check(index);
 
-        Node preNode = dummyNode;
+        ListNode preNode = dummyNode;
         for (int i = 0; i < index; i++) {
             preNode = preNode.next;
         }
 
-        Node curNode = preNode.next;
+        ListNode curNode = preNode.next;
         preNode.next = curNode.next;
         curNode.next = null;
         size--;
@@ -113,7 +113,7 @@ public class LinkedList<E> {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("LinkedList node [");
-        Node preNode = dummyNode;
+        ListNode preNode = dummyNode;
         for (int i = 0; i < size; i++) {
             preNode = preNode.next;
             stringBuilder.append(preNode.e);
@@ -147,10 +147,28 @@ public class LinkedList<E> {
         }
 
         int n = 2;
-        int i = 0;
-        int j = n;
 
-        LinkedList.Node node = linkedList.getFirstNode();
+        LinkedList.ListNode node = linkedList.getFirstNode();
+        LinkedList.ListNode currNode = linkedList.getFirstNode();
 
+        //向前移动n位
+        for (int i = 0; i < n; i++) {
+            if (node != null) {
+                node = node.next;
+            } else {
+                throw new IllegalArgumentException("index is out off size");
+            }
+        }
+        while (node != null) {
+            if (node.next == null) {
+                break;
+            }
+            node = node.next;
+            currNode = currNode.next;
+        }
+
+        Object result = currNode.e;
+
+        String assssssss = "";
     }
 }
