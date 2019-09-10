@@ -150,6 +150,7 @@ public class LinkedList<E> {
         int i = 0;
         int j = n;
 
+        LinkedList.Node node = linkedList.getFirstNode();
 
     }
 }
