@@ -129,14 +129,12 @@ public class LinkedList<E> {
         if (size > 0 && (index > size - 1 || index < 0)) {
             throw new IllegalArgumentException("index is out off size");
         }
-
     }
-
 
     public static void main(String[] args) {
         LinkedList<Integer> linkedList = new LinkedList<>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2; i++) {
             linkedList.addFirst(i);
             System.out.println(linkedList);
 
@@ -147,28 +145,25 @@ public class LinkedList<E> {
         }
 
         int n = 2;
+        LinkedList.ListNode node = removeNode(linkedList.getFirstNode(), 2);
 
-        LinkedList.ListNode node = linkedList.getFirstNode();
-        LinkedList.ListNode currNode = linkedList.getFirstNode();
-
-        //向前移动n位
-        for (int i = 0; i < n; i++) {
-            if (node != null) {
-                node = node.next;
-            } else {
-                throw new IllegalArgumentException("index is out off size");
-            }
-        }
-        while (node != null) {
-            if (node.next == null) {
-                break;
-            }
-            node = node.next;
-            currNode = currNode.next;
-        }
-
-        Object result = currNode.e;
-
+        System.out.println(linkedList);
         String assssssss = "";
     }
+
+    private static LinkedList.ListNode removeNode(LinkedList.ListNode head, int n) {
+        LinkedList.ListNode slow = head, fast = head;
+        while (fast.next != null) {
+            fast = fast.next;
+            if (n == 0 ? true : n-- == 0) {
+                slow = slow.next;
+            }
+        }
+        if (n != 0) {
+            return head.next;
+        }
+        fast.next = fast.next.next;
+        return head;
+    }
+
 }
