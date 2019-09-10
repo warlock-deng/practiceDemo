@@ -144,13 +144,20 @@ public class LinkedList<E> {
 //            }
         }
 
-        int n = 2;
+        int n = 4;
         LinkedList.ListNode node = removeNode(linkedList.getFirstNode(), 2);
 
         System.out.println(linkedList);
         String assssssss = "";
     }
 
+    /**
+     * 快慢指针删除倒数第n个元素
+     *
+     * @param head 链头
+     * @param n    n位
+     * @return
+     */
     private static LinkedList.ListNode removeNode(LinkedList.ListNode head, int n) {
         LinkedList.ListNode slow = head, fast = head;
         while (fast.next != null) {
@@ -160,7 +167,7 @@ public class LinkedList<E> {
             }
         }
         if (n != 0) {
-            return head.next;
+            return head;
         }
         fast.next = fast.next.next;
         return head;
