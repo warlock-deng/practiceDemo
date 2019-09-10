@@ -11,8 +11,6 @@ public class StringDemo {
 
     public static void main(String[] args) {
 
-        src.main.java.javaobject.TestDemo testDemo = new src.main.java.javaobject.TestDemo();
-
         Integer i1 = 10;
         Integer i10 = 10;
         boolean b1 = (i1 == i10);
