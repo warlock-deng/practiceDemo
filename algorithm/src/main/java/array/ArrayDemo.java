@@ -30,6 +30,7 @@ public class ArrayDemo {
         array.removeFirst();
         System.out.println(array.toString());
 
+
     }
 
     private static void grow() {

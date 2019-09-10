@@ -61,6 +61,10 @@ public class LinkedList<E> {
         return preNode.e;
     }
 
+    public Node getFirstNode() {
+        return dummyNode.next;
+    }
+
     public void addFirst(E e) {
         add(0, e);
     }
@@ -136,11 +140,16 @@ public class LinkedList<E> {
             linkedList.addFirst(i);
             System.out.println(linkedList);
 
-            if (i % 3 == 2) {
-                linkedList.removeLast();
-                System.out.println(linkedList);
-            }
+//            if (i % 3 == 2) {
+//                linkedList.removeLast();
+//                System.out.println(linkedList);
+//            }
         }
+
+        int n = 2;
+        int i = 0;
+        int j = n;
+
 
     }
 }
