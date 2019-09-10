@@ -1,4 +1,6 @@
 
+
 dependencies {
+    compile("com.zhaopin:common-http:3.5.3.RC.1")
 
 }
