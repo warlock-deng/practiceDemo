@@ -1,5 +1,8 @@
 package tree;
 
+
+import java.util.Stack;
+
 /**
  * @author warlock.deng
  * Created at 2019/9/10
@@ -93,6 +96,50 @@ public class BinaryTree<E extends Comparable> {
         }
     }
 
+    public void preOrderNR() {
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            Node cur = stack.pop();
+            System.out.println(cur.e);
+            if (cur.right != null) {
+                stack.push(cur.right);
+            }
+            if (cur.left != null) {
+                stack.push(cur.left);
+            }
+        }
+    }
+
+
+    public void inOrder() {
+        inOrder(root);
+    }
+
+    private void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left);
+        System.out.println(node.e);
+        inOrder(node.right);
+    }
+
+    public void postOrder() {
+        postOrder(root);
+    }
+
+    private void postOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+
+        System.out.println(node.e);
+    }
+
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -121,14 +168,24 @@ public class BinaryTree<E extends Comparable> {
 
     public static void main(String[] args) {
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
-        int[] nums = {6, 3, 8, 12, 2, 9, 45, 41, 67};
+        int[] nums = {5, 3, 6, 8, 4, 2};
+
+
         for (int num : nums) {
             binaryTree.add(num);
         }
 
-        // binaryTree.preOrder();
+        binaryTree.preOrder();
 
-        System.out.println(binaryTree);
+        System.out.println("************");
+        binaryTree.preOrderNR();
+
+        System.out.println("************");
+        binaryTree.inOrder();
+
+        System.out.println("************");
+        binaryTree.postOrder();
+        // System.out.println(binaryTree);
     }
 
 }
