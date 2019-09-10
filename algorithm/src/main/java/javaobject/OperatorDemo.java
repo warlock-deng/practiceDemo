@@ -1,4 +1,4 @@
-package src.main.java.javaobject;
+package javaobject;
 
 import sun.management.snmp.jvminstr.JvmOSImpl;
 

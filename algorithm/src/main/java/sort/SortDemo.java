@@ -1,4 +1,4 @@
-package src.main.java.sort;
+package sort;
 
 import java.util.HashMap;
 import java.util.Map;

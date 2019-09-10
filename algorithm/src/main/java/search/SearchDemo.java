@@ -1,4 +1,4 @@
-package src.main.java.search;
+package search;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package src.main.java.tree;
+package tree;
 
 /**
  * @author Warlock.deng

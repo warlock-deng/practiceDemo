@@ -1,4 +1,4 @@
-package src.main.java.javaobject;
+package javaobject;
 
 
 import java.util.Stack;
@@ -11,7 +11,7 @@ public class StringDemo {
 
     public static void main(String[] args) {
 
-        TestDemo testDemo = new TestDemo();
+        src.main.java.javaobject.TestDemo testDemo = new src.main.java.javaobject.TestDemo();
 
         Integer i1 = 10;
         Integer i10 = 10;

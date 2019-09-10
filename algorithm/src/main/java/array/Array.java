@@ -1,4 +1,4 @@
-package src.main.java.array;
+package array;
 
 /**
  * @author warlock.deng

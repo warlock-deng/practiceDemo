@@ -1,4 +1,4 @@
-package src.main.java.tree;
+package tree;
 
 import java.util.Arrays;
 import java.util.Collections;

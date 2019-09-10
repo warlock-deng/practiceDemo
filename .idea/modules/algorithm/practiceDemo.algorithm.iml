@@ -4,6 +4,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../algorithm">
+      <sourceFolder url="file://$MODULE_DIR$/../../../algorithm/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../../algorithm/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../algorithm/build" />
     </content>

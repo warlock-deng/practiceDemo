@@ -1,4 +1,4 @@
-package src.main.java.stack;
+package stack;
 
 /**
  * 使用双向链表实现队列
