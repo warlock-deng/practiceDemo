@@ -225,6 +225,41 @@ public class BinaryTree<E extends Comparable> {
         return node;
     }
 
+    public void remove(E e) {
+        root = removeNode(root, e);
+    }
+
+    public Node removeNode(Node node, E e) {
+        if (node == null) {
+            return null;
+        }
+        if (e.compareTo(node.e) > 0) {
+            node.right = removeNode(node.right, e);
+            return node;
+        } else if (e.compareTo(node.e) < 0) {
+            node.left = removeNode(node.left, e);
+            return node;
+        } else {
+            if (node.left == null) {
+                Node rights = node.right;
+                node.right = null;
+                size--;
+                return rights;
+            }
+            if (node.right == null) {
+                Node left = node.left;
+                node.left = null;
+                size--;
+                return left;
+            }
+
+            Node successor = miniMun(node.right);
+            successor.right = removeMin(node.right);
+            successor.left = node.left;
+            node.left = node.right = null;
+            return successor;
+        }
+    }
 
     @Override
     public String toString() {
@@ -261,9 +296,11 @@ public class BinaryTree<E extends Comparable> {
             binaryTree.add(num);
         }
 
-        for (int num : nums) {
-            System.out.println(binaryTree.removeMin());
-        }
+//        for (int num : nums) {
+//            System.out.println(binaryTree.removeMin());
+//        }
+
+        binaryTree.remove(6);
 
 //        binaryTree.preOrder();
 
