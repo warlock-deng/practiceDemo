@@ -1,6 +1,8 @@
 package tree;
 
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -139,6 +141,90 @@ public class BinaryTree<E extends Comparable> {
         System.out.println(node.e);
     }
 
+    public void levelOrder() {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node curNode = queue.poll();
+            System.out.println(curNode.e);
+            if (curNode.left != null) {
+                queue.add(curNode.left);
+            }
+            if (curNode.right != null) {
+                queue.add(curNode.right);
+            }
+        }
+    }
+
+    public E miniMum() {
+        if (size == 0) {
+            throw new IllegalArgumentException("is empty");
+        }
+        return miniMunNR(root).e;
+    }
+
+    private Node miniMun(Node node) {
+        if (node.left == null) {
+            return node;
+        }
+        return miniMun(node.left);
+    }
+
+    private Node miniMunNR(Node node) {
+        while (node.left != null) {
+            node = node.left;
+        }
+        return node;
+    }
+
+    public E maxNum() {
+        if (isEmpty()) {
+            throw new IllegalArgumentException("is empty");
+        }
+        return maxMum(root).e;
+    }
+
+    private Node maxMum(Node node) {
+        if (node.right == null) {
+            return node;
+        }
+        return maxMum(node.right);
+    }
+
+    public E removeMin() {
+        E ret = miniMum();
+        root = removeMin(root);
+        return ret;
+    }
+
+    private Node removeMin(Node node) {
+        if (node.left == null) {
+            Node right = node.right;
+            node.right = null;
+            size--;
+            return right;
+        }
+
+        node.left = removeMin(node.left);
+        return node;
+    }
+
+    public E removeMax() {
+        E result = maxNum();
+        root = removeMax(root);
+        return result;
+    }
+
+    private Node removeMax(Node node) {
+        if (node.right == null) {
+            Node left = node.left;
+            node.left = null;
+            return left;
+        }
+        node.right = removeMax(node.right);
+        return node;
+    }
+
 
     @Override
     public String toString() {
@@ -168,24 +254,28 @@ public class BinaryTree<E extends Comparable> {
 
     public static void main(String[] args) {
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
-        int[] nums = {5, 3, 6, 8, 4, 2};
+        int[] nums = {5, 3, 6, 8, 4, 2, 7};
 
 
         for (int num : nums) {
             binaryTree.add(num);
         }
 
-        binaryTree.preOrder();
+        for (int num : nums) {
+            System.out.println(binaryTree.removeMin());
+        }
 
-        System.out.println("************");
-        binaryTree.preOrderNR();
+//        binaryTree.preOrder();
 
-        System.out.println("************");
-        binaryTree.inOrder();
-
-        System.out.println("************");
-        binaryTree.postOrder();
-        // System.out.println(binaryTree);
+//        System.out.println("************");
+//        binaryTree.preOrderNR();
+//
+//        System.out.println("************");
+//        binaryTree.inOrder();
+//
+//        System.out.println("************");
+//        binaryTree.postOrder();
+        System.out.println(binaryTree);
     }
 
 }
