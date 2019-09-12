@@ -1,5 +1,9 @@
 package tree;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.TreeSet;
+
 /**
  * @author warlock.deng
  * Created at 2019/9/10
@@ -7,11 +11,22 @@ package tree;
 public class MainDemo {
 
     public static void main(String[] args) {
-        BinaryTree<Integer> binaryTree=new BinaryTree<>();
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
         int[] nums = {6, 3, 8, 12, 2, 9, 45, 41, 67};
         for (int num : nums) {
             binaryTree.add(num);
         }
+
+        int hash = "test".hashCode();
+        int a = 3 & hash;
+
+        String assss = "";
+        TreeSet treeSet;
+
+        HashMap map;
+
+        Hashtable hashtable;
+
 
         binaryTree.preOrder();
     }

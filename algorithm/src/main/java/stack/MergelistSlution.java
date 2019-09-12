@@ -48,8 +48,27 @@ public class MergelistSlution {
         int[] nums3 = {2, 6};
         ListNode list3 = new ListNode(nums3);
 
+        ListNode[] listNodes = {list1, list2, list3};
 
 
+        ListNode result = null;
+        ListNode next = listNodes[0];
+        ListNode curNode = null;
+        while (next.next != null) {
+            for (ListNode node : listNodes) {
+                if (curNode == null) {
+                    curNode = node;
+                    continue;
+                }
+
+                if (node.val < curNode.val) {
+                    curNode = node;
+                }
+
+
+            }
+           
+        }
 
 
         String a = "";
