@@ -28,6 +28,8 @@ public class ThreadDemo {
         String result = future.get();
         System.out.println(result);
 
+        Object
+        executorService.shutdown();
     }
 
     private static void callable() throws Exception {
