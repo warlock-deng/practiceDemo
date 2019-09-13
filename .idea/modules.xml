@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/design.iml" filepath="$PROJECT_DIR$/.idea/modules/design.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/practiceDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/practiceDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithm/practiceDemo.algorithm.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithm/practiceDemo.algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithm/practiceDemo.algorithm.main.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithm/practiceDemo.algorithm.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/algorithm/practiceDemo.algorithm.test.iml" filepath="$PROJECT_DIR$/.idea/modules/algorithm/practiceDemo.algorithm.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/design/practiceDemo.design.iml" filepath="$PROJECT_DIR$/.idea/modules/design/practiceDemo.design.iml" />
     </modules>
   </component>

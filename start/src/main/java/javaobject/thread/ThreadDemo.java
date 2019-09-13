@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
-import static java.lang.Thread.sleep;
+import static java.lang.Thread.*;
 
 /**
  * @author warlock.deng
