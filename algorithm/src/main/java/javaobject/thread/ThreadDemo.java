@@ -1,5 +1,8 @@
 package javaobject.thread;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 import static java.lang.Thread.*;
@@ -13,7 +16,18 @@ public class ThreadDemo {
     public static void main(String[] args) throws Exception {
 
         //  mainThreadWait();
-        callable();
+        //callable();
+        threadPoll();
+
+    }
+
+    private static void threadPoll() throws Exception {
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        Future<String> future = executorService.submit(new MyCallable());
+
+        String result = future.get();
+        System.out.println(result);
+
     }
 
     private static void callable() throws Exception {

@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 public class MyCallable implements Callable {
 
     @Override
-    public Object call() throws Exception {
+    public String call() throws Exception {
         String value = "test";
         System.out.println("ready to task");
         Thread.sleep(5000);
