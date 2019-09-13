@@ -15,6 +15,7 @@ public class BinaryDemo {
         List<Integer> list = Arrays.stream(tg).collect(Collectors.toList());
         Collections.sort(list);
 
+
     }
 
 
