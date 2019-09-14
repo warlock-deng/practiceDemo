@@ -1,6 +1,7 @@
 package javaobject;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Warlock.deng
@@ -15,16 +16,15 @@ public class MapDemo {
 
         Map treeMap = new TreeMap();
 
-        Map hashTable = new Hashtable();
+        Hashtable hashTable = new Hashtable();
+        hashTable.put("", "");
 
 
-
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+        concurrentHashMap.put("", "");
 
 
         Set set = new HashSet<Integer>();
-
-
-
 
 
     }
