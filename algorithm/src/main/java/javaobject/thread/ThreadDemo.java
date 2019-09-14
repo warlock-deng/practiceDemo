@@ -1,9 +1,9 @@
 package javaobject.thread;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.*;
+import java.util.concurrent.locks.AbstractQueuedLongSynchronizer;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.locks.ReentrantLock;
 
 import static java.lang.Thread.sleep;
 
@@ -17,15 +17,31 @@ public class ThreadDemo {
 
         //  mainThreadWait();
         //callable();
-        threadPoll();
+//        threadPoll();
+//
+//        StringBuilder stringBuilder = new StringBuilder();
+//
+//        StringBuffer stringBuffer = new StringBuffer();
 
+        String a1 = "a1";
+        String a2 = "a2";
+        String a3 = "a3";
+
+        String a4 = a1 + a2;
+        String a5 = a3 + "a5";
     }
 
     private static void threadPoll() throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
         Future<String> future = executorService.submit(new MyCallable());
 
+        ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(3);
+
+        //AbstractQueuedSynchronizer abstractQueuedSynchronizer = new ReentrantLock();
+        //AbstractQueuedLongSynchronizer
+
         String result = future.get();
+
         System.out.println(result);
 
 
