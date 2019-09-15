@@ -1,8 +1,6 @@
 package tree;
 
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * @author warlock.deng
@@ -26,6 +24,10 @@ public class MainDemo {
         HashMap map;
 
         Hashtable hashtable;
+
+        TreeMap treeMap;
+
+        LinkedHashMap linkedHashMap;
 
 
         binaryTree.preOrder();

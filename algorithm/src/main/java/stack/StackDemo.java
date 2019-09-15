@@ -1,6 +1,9 @@
 package stack;
 
 
+import java.util.AbstractQueue;
+import java.util.PriorityQueue;
+
 /**
  * @author warlock.deng
  * Created at 2019/9/8
@@ -9,6 +12,7 @@ public class StackDemo {
 
     public static void main(String[] args) {
 
+        AbstractQueue<Integer> priorityQueue = new PriorityQueue<>();
 
         Queue<Integer> loopQueue = new LoopQueue<>(4);
 

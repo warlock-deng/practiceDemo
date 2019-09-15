@@ -12,6 +12,10 @@ public class TestDemo {
 
     }
 
+    public static void main(String[] args) {
+
+    }
+
     public TestDemo() {
         test = 10;
 
