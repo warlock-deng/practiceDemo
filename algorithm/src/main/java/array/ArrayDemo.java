@@ -13,6 +13,8 @@ public class ArrayDemo {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
 
+        ArrayList arrayList=new ArrayList();
+
         LinkedList<Integer> linkedList = new LinkedList<>();
 
         Array array = new Array<Integer>();
