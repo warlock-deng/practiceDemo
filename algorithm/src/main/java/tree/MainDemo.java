@@ -1,6 +1,7 @@
 package tree;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author warlock.deng
@@ -28,6 +29,9 @@ public class MainDemo {
         TreeMap treeMap;
 
         LinkedHashMap linkedHashMap;
+
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+        concurrentHashMap.size();
 
 
         binaryTree.preOrder();
