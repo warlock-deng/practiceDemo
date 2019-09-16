@@ -22,9 +22,12 @@ public class LinkedListSet<E> implements Set<E> {
 
     private Node head;
 
-    private Node last;
-
     private int size;
+
+    public LinkedListSet() {
+        this.size = 0;
+        head = null;
+    }
 
     @Override
     public void add(E e) {
@@ -33,13 +36,10 @@ public class LinkedListSet<E> implements Set<E> {
         }
         if (isEmpty()) {
             head = new Node(e);
-        } else if (size == 1) {
-            last = new Node(e);
-            head.next = last;
         } else {
             Node preNode = new Node(e);
-            preNode.next = last;
-            last = preNode;
+            preNode.next = head;
+            head = preNode;
         }
         size++;
     }
@@ -59,7 +59,7 @@ public class LinkedListSet<E> implements Set<E> {
             head = curr.next;
             curr.next = null;
         } else {
-            while (curr.next != null) {
+            while (curr != null) {
                 if (curr.e.equals(e)) {
                     break;
                 }
@@ -78,7 +78,7 @@ public class LinkedListSet<E> implements Set<E> {
             return false;
         }
         Node curr = head;
-        while (curr.next != null) {
+        while (curr != null) {
             if (curr.e.equals(e)) {
                 return true;
             }
@@ -99,8 +99,31 @@ public class LinkedListSet<E> implements Set<E> {
 
     @Override
     public String toString() {
+        if (isEmpty()) {
+            return null;
+        }
         StringBuilder stringBuilder = new StringBuilder();
-
+        stringBuilder.append("LinkedListSet [");
+        Node curr = head;
+        while (curr != null) {
+            stringBuilder.append(curr.e);
+            if (curr.next != null) {
+                stringBuilder.append(",");
+            }
+            curr = curr.next;
+        }
+        stringBuilder.append("]");
         return stringBuilder.toString();
+    }
+
+
+    public static void main(String[] args) {
+        Integer[] tg = {50, 12, 65, 56, 65, 18, 12, 21, 21, 10, 7, 24};
+        LinkedListSet<Integer> linkedListSet = new LinkedListSet<>();
+        for (int i = 0; i < tg.length; i++) {
+            linkedListSet.add(tg[i]);
+        }
+
+        System.out.println(linkedListSet.toString());
     }
 }
