@@ -29,6 +29,17 @@ public class ThreadDemo {
 
         String a4 = a1 + a2;
         String a5 = a3 + "a5";
+
+        deadLock();
+
+    }
+
+    private static void deadLock() {
+        Thread thread1 = new Thread(new DeadLockDemo(true));
+        Thread thread2 = new Thread(new DeadLockDemo(false));
+
+        thread1.start();
+        thread2.start();
     }
 
     private static void threadPoll() throws Exception {
