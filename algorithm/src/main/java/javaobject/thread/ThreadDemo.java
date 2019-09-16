@@ -1,9 +1,7 @@
 package javaobject.thread;
 
 import java.util.concurrent.*;
-import java.util.concurrent.locks.AbstractQueuedLongSynchronizer;
-import java.util.concurrent.locks.AbstractQueuedSynchronizer;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static java.lang.Thread.sleep;
 
@@ -30,8 +28,12 @@ public class ThreadDemo {
         String a4 = a1 + a2;
         String a5 = a3 + "a5";
 
-        deadLock();
+        //deadLock();
 
+        AtomicBoolean atomicBoolean = new AtomicBoolean();
+
+
+        ExecutorService executorService = Executors.newCachedThreadPool();
     }
 
     private static void deadLock() {
