@@ -1,5 +1,6 @@
 package sort;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,9 +25,11 @@ public class SortDemo {
 
         String c = "0";
         Integer[] tg = {50, 12, 65, 8, 23, 69, 99, 56, 65, 18, 12, 21, 2, 10, 7, 24};
-        testFastSort(tg);
+        //testFastSort(tg);
         //testMaopao(tg);
+        Integer[] mg = mergeSort(tg);
 
+        String assss = "";
     }
 
     private static void testMaopao(Integer[] tg) {
@@ -49,6 +52,12 @@ public class SortDemo {
         String a = "";
     }
 
+    /***
+     * 快速排序
+     * @param arr
+     * @param begin
+     * @param end
+     */
     private static void fastSort(Integer[] arr, int begin, int end) {
         if (begin > end) {
             return;
@@ -76,5 +85,41 @@ public class SortDemo {
         fastSort(arr, begin, i - 1);
         fastSort(arr, i + 1, end);
     }
+
+    /**
+     * 归并排序
+     *
+     * @param arr
+     * @return
+     */
+    private static Integer[] mergeSort(Integer[] arr) {
+        if (arr.length < 2) {
+            return arr;
+        }
+
+        int mid = arr.length / 2;
+
+        Integer[] left = Arrays.copyOfRange(arr, 0, mid);
+        Integer[] right = Arrays.copyOfRange(arr, mid, arr.length);
+        return mergeSort(mergeSort(left), mergeSort(right));
+    }
+
+    private static Integer[] mergeSort(Integer[] left, Integer[] right) {
+        Integer[] integers = new Integer[left.length + right.length];
+        for (int index = 0, i = 0, j = 0; index < integers.length; index++) {
+            if (i >= left.length) {
+                integers[index] = right[j++];
+            } else if (j >= right.length) {
+                integers[index] = left[i++];
+            } else if (left[i] > right[j]) {
+                integers[index] = right[j++];
+            } else {
+                integers[index] = left[i++];
+            }
+        }
+
+        return integers;
+    }
+
 
 }

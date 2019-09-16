@@ -1,6 +1,8 @@
 package tree;
 
 /**
+ * 集合，没有重复元素
+ *
  * @author warlock.deng
  * Created at 2019/9/11
  */
