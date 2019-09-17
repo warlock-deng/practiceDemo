@@ -36,7 +36,7 @@ public class MaxHeap<E extends Comparable<E>> {
         if (index < 1) {
             return 0;
         }
-        return index >> 1;
+        return (index - 1) >> 1;
     }
 
     private int getLeft(int index) {
@@ -115,10 +115,14 @@ public class MaxHeap<E extends Comparable<E>> {
             return;
         }
         if (leftIndex < size) {
-            swap(index, leftIndex);
+            if (data[index].compareTo(data[leftIndex]) < 0) {
+                swap(index, leftIndex);
+            }
         }
         if (rightIndex < size) {
-            swap(index, rightIndex);
+            if (data[index].compareTo(data[rightIndex]) < 0) {
+                swap(index, rightIndex);
+            }
         }
     }
 
@@ -164,7 +168,7 @@ public class MaxHeap<E extends Comparable<E>> {
         }
         System.out.println(maxHeap);
 
-        int size =  maxHeap.getSize();
+        int size = maxHeap.getSize();
         for (int i = 0; i < size; i++) {
             Integer e = maxHeap.extractMax();
             System.out.println(e);

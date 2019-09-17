@@ -26,12 +26,35 @@ public class AvlTree<E extends Comparable<E>> {
     }
 
 
-    private Node head;
+    private Node root;
 
     private int size;
 
 
+    public int getSize() {
+        return size;
+    }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+
+    public void add(E e) {
+        root = add(root, e);
+    }
+
+    private Node add(Node node, E e) {
+        if (root == null) {
+            root = new Node(e);
+            return root;
+        }
+
+        Node currNode = root;
+        if (currNode.e.compareTo(e) < 0) {
+        }
+        return node;
+    }
 
 
 }
