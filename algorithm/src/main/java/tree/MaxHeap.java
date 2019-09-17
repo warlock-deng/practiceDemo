@@ -53,6 +53,7 @@ public class MaxHeap<E extends Comparable<E>> {
         }
         int newCapacity = capacity << 1;
         data = Arrays.copyOf(data, newCapacity);
+        capacity = newCapacity;
 //        E[] es = (E[]) new Object[newCapacity];
 //        for (int i = 0; i < size; i++) {
 //            es[i] = arr[i];
