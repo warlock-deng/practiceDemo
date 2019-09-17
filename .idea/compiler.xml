@@ -5,6 +5,8 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="com.demo.practiceDemo.algorithm.main" target="1.8" />
+      <module name="com.demo.practiceDemo.algorithm.test" target="1.8" />
       <module name="practiceDemo.algorithm.main" target="1.8" />
       <module name="practiceDemo.algorithm.test" target="1.8" />
       <module name="practiceDemo.start.main" target="1.8" />

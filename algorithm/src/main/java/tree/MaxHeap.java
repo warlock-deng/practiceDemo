@@ -164,10 +164,11 @@ public class MaxHeap<E extends Comparable<E>> {
         }
         System.out.println(maxHeap);
 
-        Integer e = maxHeap.extractMax();
-
-        System.out.println(e);
-
-        System.out.println(maxHeap);
+        int size =  maxHeap.getSize();
+        for (int i = 0; i < size; i++) {
+            Integer e = maxHeap.extractMax();
+            System.out.println(e);
+            System.out.println(maxHeap);
+        }
     }
 }

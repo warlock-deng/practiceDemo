@@ -17,6 +17,15 @@ public class NumberDemo {
 //
 //        Integer.parseInt("2019");
 
+        int b1 = 10;
+        int b2 = 20;
+
+        int b11 = b1++;
+
+        int b22 = ++b2;
+
+        System.out.println(b11);
+        System.out.println(b22);
 
         long t = 12007036;
 
