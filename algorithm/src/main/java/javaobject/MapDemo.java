@@ -14,6 +14,7 @@ public class MapDemo {
 
         HashMap hashMap = new HashMap<>(8);
         hashMap.put("","");
+        hashMap.get("");
 
         TreeMap treeMap = new TreeMap();
         treeMap.put("","");
