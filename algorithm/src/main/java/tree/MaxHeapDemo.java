@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @author Warlock.deng
  * Created at 2019-09-16
  */
-public class MaxHeap<E extends Comparable<E>> {
+public class MaxHeapDemo<E extends Comparable<E>> {
 
     private E[] data;
 
@@ -15,11 +15,11 @@ public class MaxHeap<E extends Comparable<E>> {
 
     private int capacity;
 
-    public MaxHeap() {
+    public MaxHeapDemo() {
         this(10);
     }
 
-    public MaxHeap(int capacity) {
+    public MaxHeapDemo(int capacity) {
         data = (E[]) new Comparable[capacity];
         this.capacity = capacity;
     }
@@ -163,7 +163,7 @@ public class MaxHeap<E extends Comparable<E>> {
 
     public static void main(String[] args) {
         Integer[] tg = {50, 12, 65, 56, 65, 18, 12, 21, 21, 10, 7, 24};
-        MaxHeap<Integer> maxHeap = new MaxHeap<>();
+        MaxHeapDemo<Integer> maxHeap = new MaxHeapDemo<>();
         for (int i = 0; i < tg.length; i++) {
             maxHeap.add(tg[i]);
         }
