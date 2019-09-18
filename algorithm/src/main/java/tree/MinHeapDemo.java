@@ -16,7 +16,7 @@ public class MinHeapDemo<E extends Comparable<E>> {
 
     private int capacity;
 
-    private static final int DEFAULT_CAPACITY = 10;
+    private static final int DEFAULT_MIN_CAPACITY = 10;
 
     public int getSize() {
         return size;
@@ -27,7 +27,7 @@ public class MinHeapDemo<E extends Comparable<E>> {
     }
 
     public MinHeapDemo() {
-        this(DEFAULT_CAPACITY);
+        this(DEFAULT_MIN_CAPACITY);
     }
 
     public MinHeapDemo(int capacity) {
@@ -54,12 +54,19 @@ public class MinHeapDemo<E extends Comparable<E>> {
      * 容量要满时，进行扩容；当少于4分之1时，进行缩容
      */
     private void resize() {
+        //容量够用，且当前容量为默认容量，则不需要进行扩容或缩容
+        if (size < capacity && DEFAULT_MIN_CAPACITY == capacity) {
+            return;
+        }
         int newCapacity = 0;
         if (size == capacity) {
+            //容量要超，则需要进行扩容
             newCapacity = capacity << 1;
             capacity = newCapacity;
             data = Arrays.copyOf(data, newCapacity);
-        } else if ((size << 2) < capacity && DEFAULT_CAPACITY != capacity) {
+        }
+        if (capacity > DEFAULT_MIN_CAPACITY && (size << 2) < capacity) {
+            //若容量大于默认最小容量,且小于当前4分之1时，，则需要进行缩容
             newCapacity = capacity >> 1;
             capacity = newCapacity;
             data = Arrays.copyOf(data, newCapacity);

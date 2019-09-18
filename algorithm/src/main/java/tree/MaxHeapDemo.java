@@ -51,6 +51,7 @@ public class MaxHeapDemo<E extends Comparable<E>> {
         if (size < capacity) {
             return;
         }
+        
         int newCapacity = capacity << 1;
         data = Arrays.copyOf(data, newCapacity);
         capacity = newCapacity;
