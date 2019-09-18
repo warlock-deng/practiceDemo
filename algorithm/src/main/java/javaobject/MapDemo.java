@@ -13,6 +13,7 @@ public class MapDemo {
         Integer[] tg = {50, 12, 65, 8, 23, 69, 99, 56, 65, 18, 12, 21, 2, 10, 7, 24};
 
         HashMap hashMap = new HashMap<>(8);
+        hashMap.put("","");
         //
         // hashMap.DEFAULT_LOAD_FACTOR
 
