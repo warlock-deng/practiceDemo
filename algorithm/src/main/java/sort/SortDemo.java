@@ -27,7 +27,9 @@ public class SortDemo {
         Integer[] tg = {50, 12, 65, 8, 23, 69, 99, 56, 65, 18, 12, 21, 2, 10, 7, 24};
         //testFastSort(tg);
         //testMaopao(tg);
-        Integer[] mg = mergeSort(tg);
+        //Integer[] mg = mergeSort(tg);
+
+        chageSort(tg);
 
         String assss = "";
     }
@@ -121,5 +123,32 @@ public class SortDemo {
         return integers;
     }
 
+    private static void chageSort(Integer[] data) {
+        for (int i = 0; i < data.length; i++) {
+            Integer resultIndex = changeSort(data, i);
+            if (resultIndex > -1 && resultIndex < data.length) {
+                swap(data, resultIndex, i);
+            }
+        }
+
+    }
+
+    private static Integer changeSort(Integer[] data, int index) {
+        Integer start = data[index];
+        Integer resultIndex = -1;
+        for (int i = index + 1; i < data.length; i++) {
+            if (data[i] < start) {
+                resultIndex = i;
+                start = data[i];
+            }
+        }
+        return resultIndex;
+    }
+
+    private static void swap(Integer[] data, int index1, int index2) {
+        Integer t = data[index1];
+        data[index1] = data[index2];
+        data[index2] = t;
+    }
 
 }

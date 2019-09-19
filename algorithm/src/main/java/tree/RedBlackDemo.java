@@ -1,5 +1,9 @@
 package tree;
 
+import com.sun.org.apache.regexp.internal.RE;
+
+import java.lang.reflect.MalformedParameterizedTypeException;
+
 /**
  * @author Warlock.deng
  * Created at 2019-09-05
@@ -26,9 +30,28 @@ public class RedBlackDemo<E> {
 
     }
 
+    private void flipColor(Node node) {
+        node.color = RED;
+        node.left.color = BLACK;
+        node.right.color = BLACK;
+    }
 
+    private Node leftRotate(Node node) {
+        Node x = node.right;
+        node.right = x.left;
+        x.left = node;
+        node.color = RED;
+        return x;
+    }
 
-
+    private Node rightRotate(Node node) {
+        Node x = node.left;
+        node.left = x.right;
+        x.right = node;
+        x.color = node.color;
+        node.color = RED;
+        return x;
+    }
 
 
 }
