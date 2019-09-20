@@ -29,8 +29,9 @@ public class SortDemo {
         //testMaopao(tg);
         //Integer[] mg = mergeSort(tg);
 
-        chageSort(tg);
+        //chageSort(tg);
 
+        changeSortRecursion(tg, 0);
         String assss = "";
     }
 
@@ -131,6 +132,26 @@ public class SortDemo {
             }
         }
 
+    }
+
+    private static void changeSortRecursion(Integer[] data, int index) {
+        if (index > data.length - 1) {
+            return;
+        }
+
+        int resultIndex = -1;
+        Integer head = data[index];
+        for (int i = index + 1; i < data.length; i++) {
+            if (head > data[i]) {
+                head = data[i];
+                resultIndex = i;
+            }
+        }
+        if (resultIndex > -1 && resultIndex < data.length) {
+            swap(data, index, resultIndex);
+        }
+        index++;
+        changeSortRecursion(data, index);
     }
 
     private static Integer changeSort(Integer[] data, int index) {

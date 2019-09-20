@@ -2,6 +2,7 @@ package javaobject.thread;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.locks.ReentrantLock;
 
 import static java.lang.Thread.sleep;
 
@@ -32,6 +33,7 @@ public class ThreadDemo {
 
         AtomicBoolean atomicBoolean = new AtomicBoolean();
 
+        ReentrantLock reentrantLock = new ReentrantLock();
 
         ExecutorService executorService = Executors.newCachedThreadPool();
     }
