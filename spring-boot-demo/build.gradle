@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.8.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+}
+
+repositories {
+    maven {
+        url 'http://172.17.0.59:8081/nexus/content/groups/public'
+    }
+    maven {
+        url 'http://maven.zhaopin.com:8000/nexus/content/groups/public'
+    }
+    maven {
+        url 'https://jfrog.nutz.cn/artifactory/snapshots'
+    }
+    maven {
+        url "http://repo.spring.io/snapshot"
+    }
+    maven {
+        url "http://repo.spring.io/milestone"
+    }
+
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
