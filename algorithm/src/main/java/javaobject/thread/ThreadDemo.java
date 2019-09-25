@@ -36,6 +36,8 @@ public class ThreadDemo {
         ReentrantLock reentrantLock = new ReentrantLock();
 
         ExecutorService executorService = Executors.newCachedThreadPool();
+
+        ThreadLocal<String> threadLocal = new ThreadLocal<>();
     }
 
     private static void deadLock() {
