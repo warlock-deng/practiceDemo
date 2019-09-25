@@ -1,5 +1,4 @@
 rootProject.name = 'practiceDemo'
 include "algorithm"
 include "design"
-include 'demo'
 
