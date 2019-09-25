@@ -1,4 +1,5 @@
 rootProject.name = 'practiceDemo'
 include "algorithm"
 include "design"
+include 'spring-boot-demo'
 
