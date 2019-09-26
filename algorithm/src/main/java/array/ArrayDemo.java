@@ -23,17 +23,20 @@ public class ArrayDemo {
             array.addLast(i);
         }
 
-        System.out.println(array.toString());
+//        System.out.println(array.toString());
+//
+//        array.addLast(30);
+//        System.out.println(array.toString());
+//
+//        array.addLast(34);
+//        System.out.println(array.toString());
+//
+//        array.removeFirst();
+//        System.out.println(array.toString());
 
-        array.addLast(30);
-        System.out.println(array.toString());
-
-        array.addLast(34);
-        System.out.println(array.toString());
-
-        array.removeFirst();
-        System.out.println(array.toString());
-
+        for(int i=3650 ;i<3751;i++){
+            System.out.println(i);
+        }
 
     }
 
