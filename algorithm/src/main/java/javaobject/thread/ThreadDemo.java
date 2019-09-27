@@ -31,6 +31,9 @@ public class ThreadDemo {
 
         //deadLock();
 
+
+        Semaphore semaphore = new Semaphore(10);
+
         AtomicBoolean atomicBoolean = new AtomicBoolean();
 
         ReentrantLock reentrantLock = new ReentrantLock();

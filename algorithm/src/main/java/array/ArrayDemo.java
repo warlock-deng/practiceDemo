@@ -34,9 +34,6 @@ public class ArrayDemo {
 //        array.removeFirst();
 //        System.out.println(array.toString());
 
-        for(int i=3650 ;i<3751;i++){
-            System.out.println(i);
-        }
 
     }
 
@@ -46,6 +43,9 @@ public class ArrayDemo {
         int newCapacity = oldCapacity + (oldCapacity >> 1);
 
         String a = String.valueOf(newCapacity);
+
+
+
     }
 
 
