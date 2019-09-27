@@ -1,5 +1,6 @@
 package javaobject.thread;
 
+import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -53,12 +54,15 @@ public class ThreadPoolDemo {
         executorService.shutdown();
         //System.out.println(count1.get());
         System.out.println(count2);
-    }
 
+
+
+    }
 
     private static void add() {
         //count1.incrementAndGet();
         count2.increment();
     }
+
 
 }
