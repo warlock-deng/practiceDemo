@@ -2,10 +2,7 @@ package javaobject.thread;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReference;
@@ -33,6 +30,16 @@ public class ThreadPoolDemo {
 
     public volatile int count4 = 0;
 
+    private static void add() {
+        //count1.incrementAndGet();
+        count2.increment();
+    }
+
+    private static void pool() {
+        //ExecutorService executorService=new ThreadPoolExecutor()
+
+
+    }
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -59,11 +66,6 @@ public class ThreadPoolDemo {
 
         ThreadLocal threadLocal = new ThreadLocal();
 
-    }
-
-    private static void add() {
-        //count1.incrementAndGet();
-        count2.increment();
     }
 
 
