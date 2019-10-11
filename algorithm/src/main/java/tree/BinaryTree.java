@@ -289,7 +289,7 @@ public class BinaryTree<E extends Comparable> {
 
     public static void main(String[] args) {
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
-        int[] nums = {5, 3, 6, 8, 4, 2,7};
+        int[] nums = {5, 3, 6, 8, 4, 2, 7};
 
 
         for (int num : nums) {
@@ -305,7 +305,7 @@ public class BinaryTree<E extends Comparable> {
         binaryTree.preOrder();
 
         System.out.println("************");
-       binaryTree.preOrderNR();
+        binaryTree.preOrderNR();
 //
         System.out.println("************");
         binaryTree.inOrder();
@@ -313,6 +313,13 @@ public class BinaryTree<E extends Comparable> {
         System.out.println("************");
         binaryTree.postOrder();
         //System.out.println(binaryTree);
+
+        System.out.println("************");
+
+        binaryTree.levelOrder();
+
+        System.out.println("************");
+        System.out.println(binaryTree);
     }
 
 }
