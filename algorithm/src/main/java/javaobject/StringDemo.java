@@ -24,8 +24,26 @@ public class StringDemo {
 
         int h = hashCode(s);
 
+        longestValidParentheses(")()())");
 
         String a = "";
+    }
+
+    private static void longestValidParentheses(String s) {
+
+        char[] chars = s.toCharArray();
+        int length = 0;
+        char pre = chars[0];
+        for (int i = 1; i < chars.length; i++) {
+            if (pre == "(".charAt(0) && chars[i] == ")".charAt(0)) {
+                if (length == 0) {
+                    length = 1;
+                }
+                length = length << 1;
+            }
+            pre = chars[i];
+        }
+        System.out.println(length);
     }
 
     private static void stat() {
