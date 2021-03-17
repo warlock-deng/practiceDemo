@@ -9,6 +9,8 @@ src/main/resources/META-INF/thrift
 src/main/resources/api
 src/main/resources/mybatis-mapping
 
+/.idea/
+
 # ivy lib folder
 /lib
 
@@ -48,3 +50,4 @@ data
 /algorithm/out/
 /.idea/
 /algorithm/out/
+/.idea/
