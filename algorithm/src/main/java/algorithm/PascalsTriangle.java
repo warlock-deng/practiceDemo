@@ -21,4 +21,9 @@ package algorithm;
  * Created at 2021/3/17
  */
 public class PascalsTriangle {
+
+    public static void main(String[] args) {
+        
+    }
+
 }

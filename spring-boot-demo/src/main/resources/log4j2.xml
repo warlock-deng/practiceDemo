@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <property name="logPath">/www/service/logs</property>
+        <property name="logFile">com-fenghua-util</property>
+    </Properties>
+    <Appenders>
+        <Console name="console_log" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingFile name="file_log" fileName="${logPath}/${logFile}.log" append="true"
+                     filePattern="${logPath}/${logFile}-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="50MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <!--        <logger name="com.fenghua.util" level="debug" additivity="false">-->
+        <!--            <AppenderRef ref="Console"/>-->
+        <!--        </logger>-->
+        <!--        <logger name="org.mybatis" level="debug" additivity="false">-->
+        <!--            <AppenderRef ref="console_log"/>-->
+        <!--        </logger>-->
+        <Root level="debug">
+            <AppenderRef ref="file_log"/>
+            <AppenderRef ref="console_log"/>
+        </Root>
+    </Loggers>
+</Configuration>

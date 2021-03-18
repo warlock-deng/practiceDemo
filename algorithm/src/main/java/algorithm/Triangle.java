@@ -13,6 +13,10 @@ import java.util.List;
  * ***[6,5,7]
  * **[4,1,8,3]
  * ]
+ * <p>
+ * f[0][0] = c[0][0];
+ * f[1][0] = f[0][0] + c[1][0]
+ * f[1][1] = f[0][0] + c[1][1]
  *
  * @author warlock.deng
  * Created at 2021/3/17
@@ -20,7 +24,15 @@ import java.util.List;
 public class Triangle {
 
     public static void main(String[] args) {
-        List<List<Integer>> triangle = new ArrayList<>();
+        List<List<Integer>> triangle = new ArrayList<List<Integer>>() {{
+            new ArrayList<Integer>() {{
+                add(2);
+            }};
+            new ArrayList<Integer>(){{
+
+            }}
+        }};
+
 
         int result = triangle(triangle);
 
@@ -28,6 +40,7 @@ public class Triangle {
     }
 
     private static int triangle(List<List<Integer>> triangle) {
+
 
         return 0;
     }

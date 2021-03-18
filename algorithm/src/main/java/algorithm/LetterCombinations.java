@@ -1,7 +1,12 @@
 package algorithm;
 
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.stream.Collectors;
+
 
 /**
  * https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
@@ -39,16 +44,66 @@ public class LetterCombinations {
     private static List<String> result = new ArrayList<>();
 
     public static void main(String[] args) {
+        String test = "2545";
+        List<String> result = new ArrayList<>();
+        backtrack(result, 0, test, new StringBuilder());
 
+        List<String> resultQueue = list(test);
 
+        String teseet = "";
     }
 
 
-    private static List<String> letterCombinations(String number) {
-        char[] numbers = number.toCharArray();
+    /**
+     * 回溯法；深度优化算法
+     *
+     * @param result        存放结果
+     * @param index         索引
+     * @param letter        字符串
+     * @param stringBuilder 合并的数据
+     */
+    private static void backtrack(List<String> result, int index, String letter, StringBuilder stringBuilder) {
+        if (index == letter.length()) {
+            result.add(stringBuilder.toString());
+            return;
+        }
 
+        int nb = Character.digit(letter.charAt(index), 10);
+        String[] letters = digitsLetter.get(nb);
+        for (String s : letters) {
+            stringBuilder.append(s);
+            backtrack(result, index + 1, letter, stringBuilder);
+            stringBuilder.deleteCharAt(index);
+        }
 
-        return null;
+    }
+
+    /**
+     * 广度优化算法
+     *
+     * @param digits 字符串
+     * @return 列表
+     */
+    private static List<String> list(String digits) {
+        List<String> res = new ArrayList<>();
+        for (int i = 0; i < digits.length(); i++) {
+            int nb = Character.digit(digits.charAt(i), 10);
+            String[] letters = digitsLetter.get(nb);
+            List<String> result = new ArrayList<>();
+            for (String s : letters) {
+                if (res.size() > 0) {
+                    for (String s1 : res) {
+                        String t = s1 + s;
+                        result.add(t);
+                    }
+                } else {
+                    result.add(s);
+                }
+            }
+            res = result;
+        }
+
+        return res;
     }
 
 

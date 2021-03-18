@@ -1,8 +1,9 @@
 plugins {
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
-    id 'org.springframework.boot' version '2.1.8.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
+
 
 repositories {
     maven {
@@ -12,24 +13,40 @@ repositories {
         url 'http://maven.zhaopin.com:8000/nexus/content/groups/public'
     }
     maven {
-        url 'https://jfrog.nutz.cn/artifactory/snapshots'
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
     }
     maven {
-        url "http://repo.spring.io/snapshot"
+        url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
     }
-    maven {
-        url "http://repo.spring.io/milestone"
-    }
-
+    jcenter()
     mavenCentral()
 }
 
+configurations {
+    compile.exclude module: "spring-boot-starter-logging"
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    compile("com.alibaba:fastjson:1.2.75")
+    compile("mysql:mysql-connector-java")
+
+    //spring
+    compile("org.springframework.boot:spring-boot-starter-undertow")
+    compile("org.springframework.boot:spring-boot-starter")
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+
+    //lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    //log
+    compile "org.apache.logging.log4j:log4j-api:2.14.0"
+    compile "org.apache.logging.log4j:log4j-core:2.14.0"
+
+    //test
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testImplementation 'io.projectreactor:reactor-test'
 }
