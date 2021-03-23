@@ -1,4 +1,4 @@
-package algorithm;
+package leetcode;
 
 /**
  * 杨辉三角

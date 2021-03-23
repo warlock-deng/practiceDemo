@@ -4,6 +4,15 @@ plugins {
     id 'java'
 }
 
+//打包环境配置
+def env = System.getProperty("env") ?: "dev"
+println "[current env]:" + env
+sourceSets {
+    main {
+        java { srcDirs = ["src/main/java"] }
+        resources { srcDirs = ["src/main/resources", "env/${env}"] }
+    }
+}
 
 repositories {
     maven {
@@ -22,11 +31,13 @@ repositories {
     mavenCentral()
 }
 
+//全局排队的包
 configurations {
     compile.exclude module: "spring-boot-starter-logging"
     compile.exclude module: "spring-boot-starter-tomcat"
 }
 
+//引用的包
 dependencies {
     compile("com.alibaba:fastjson:1.2.75")
     compile("mysql:mysql-connector-java")

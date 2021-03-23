@@ -1,12 +1,8 @@
-package algorithm;
+package leetcode;
 
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.stream.Collectors;
-
 
 /**
  * https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
@@ -22,6 +18,8 @@ import java.util.stream.Collectors;
  * 7:p,q,r,s
  * 8:t,u,v
  * 9:w,x,y,z
+ *
+ *
  *
  * @author warlock.deng
  * Created at 2021/3/17
@@ -41,7 +39,7 @@ public class LetterCombinations {
         add(new String[]{"w", "x", "y", "z"});
     }};
 
-    private static List<String> result = new ArrayList<>();
+//    private static List<String> result = new ArrayList<>();
 
     public static void main(String[] args) {
         String test = "2545";
@@ -50,12 +48,13 @@ public class LetterCombinations {
 
         List<String> resultQueue = list(test);
 
+
         String teseet = "";
     }
 
-
     /**
-     * 回溯法；深度优化算法
+     * 回溯法；深度优先算法
+     * 动态规划
      *
      * @param result        存放结果
      * @param index         索引
@@ -75,7 +74,6 @@ public class LetterCombinations {
             backtrack(result, index + 1, letter, stringBuilder);
             stringBuilder.deleteCharAt(index);
         }
-
     }
 
     /**
@@ -105,6 +103,28 @@ public class LetterCombinations {
 
         return res;
     }
+
+//    private static void dynamicProgramming(String digits, int index) {
+//        if (index > digits.length() - 1) {
+//            return;
+//        }
+//        int nb = Character.digit(digits.charAt(index), 10);
+//        String[] letters = digitsLetter.get(nb);
+//        List<String> list = new ArrayList<>();
+//        for (int i = 0; i < letters.length; i++) {
+//            String s = letters[i];
+//            if (result.size() > 0) {
+//                for (String s1 : result) {
+//                    String ts = s1 + s;
+//                    list.add(ts);
+//                }
+//            } else {
+//                list.add(s);
+//            }
+//        }
+//        result = list;
+//        dynamicProgramming(digits, index + 1);
+//    }
 
 
 }
