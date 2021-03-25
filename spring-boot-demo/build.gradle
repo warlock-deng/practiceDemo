@@ -14,9 +14,13 @@ sourceSets {
     }
 }
 
+//公共库配置
 repositories {
     maven {
         url 'http://172.17.0.59:8081/nexus/content/groups/public'
+    }
+    maven {
+        url 'http://172.17.0.59:8081/nexus/content/repositories/releases'
     }
     maven {
         url 'http://maven.zhaopin.com:8000/nexus/content/groups/public'
@@ -34,7 +38,7 @@ repositories {
 //全局排队的包
 configurations {
     compile.exclude module: "spring-boot-starter-logging"
-    compile.exclude module: "spring-boot-starter-tomcat"
+    //compile.exclude module: "spring-boot-starter-tomcat"
 }
 
 //引用的包
@@ -47,7 +51,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter")
     compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4")
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
+    //compile("org.springframework.boot:spring-boot-starter-actuator")
 
     //lombok
     compileOnly 'org.projectlombok:lombok'

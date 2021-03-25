@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
     <Properties>
-        <property name="logPath">/www/service/logs</property>
-        <property name="logFile">com-fenghua-util</property>
+        <property name="logPath">/Users/dengyouhua/logs</property>
+        <property name="logFile">spring-boot-demo</property>
     </Properties>
     <Appenders>
         <Console name="console_log" target="SYSTEM_OUT">
