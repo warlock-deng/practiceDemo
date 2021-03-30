@@ -2,7 +2,7 @@ server:
   port: 8086
   tomcat:
     threads:
-      minSpare: 3
+      minSpare: 10
 spring:
   datasource:
     url: jdbc:mysql://172.17.6.180:3306/util_test?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
