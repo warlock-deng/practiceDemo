@@ -4,6 +4,8 @@ server:
     threads:
       minSpare: 10
 spring:
+  main:
+    web-application-type: NONE
   datasource:
     url: jdbc:mysql://172.17.6.180:3306/util_test?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
     username: root

@@ -38,11 +38,12 @@ dependencies {
     compile("mysql:mysql-connector-java")
 
     //spring
-    compile("org.springframework.boot:spring-boot-starter-undertow")
+    //compile("org.springframework.boot:spring-boot-starter-undertow")
     compile("org.springframework.boot:spring-boot-starter")
     compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4")
     compile("org.springframework.boot:spring-boot-starter-web")
-    //compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    //compile("org.springframework.boot:spring-boot-starter-json")
 
     //lombok
     compileOnly 'org.projectlombok:lombok'
