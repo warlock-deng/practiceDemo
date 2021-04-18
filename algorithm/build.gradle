@@ -7,20 +7,12 @@ ext {
 
 repositories {
     maven {
-        url 'https://maven.aliyun.com/nexus/content/groups/public/'
+        url 'https://maven.aliyun.com/repository/public/'
     }
     maven {
-        url 'https://maven.aliyun.com/nexus/content/repositories/jcenter'
+        url 'https://maven.aliyun.com/repository/spring/'
     }
-    maven {
-        url 'https://jfrog.nutz.cn/artifactory/snapshots'
-    }
-    maven {
-        url "http://repo.spring.io/snapshot"
-    }
-    maven {
-        url "http://repo.spring.io/milestone"
-    }
+    mavenLocal()
     mavenCentral()
 }
 
