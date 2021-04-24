@@ -17,6 +17,7 @@ public class ListNodeMain {
         two.next.next = new ListNode(6);
         two.next.next.next = new ListNode(9);
         two.next.next.next.next = new ListNode(14);
+        two.next.next.next.next.next = new ListNode(15);
 
         ListNode node = mergeListNode(one, two);
 
@@ -31,16 +32,27 @@ public class ListNodeMain {
         if (two == null) {
             return one;
         }
-        ListNode tem = head;
+        ListNode tem = head;//指针
         while (one != null || two != null) {
-            if (one.value > two.value) {
-                tem.next = two;
-                tem = tem.next;
-                two = two.next;
+            if (one != null && two != null) {
+                if (one.value > two.value) {
+                    tem.next = two;
+                    tem = tem.next;
+                    two = two.next;
+                } else {
+                    tem.next = one;
+                    tem = tem.next;
+                    one = one.next;
+                }
             } else {
-                tem.next = one;
-                tem = tem.next;
-                one = one.next;
+                if (one != null) {
+                    tem.next = one;
+                    one = null;
+                }
+                if (two != null) {
+                    tem.next = two;
+                    two = null;
+                }
             }
         }
 

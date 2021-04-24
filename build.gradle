@@ -1,6 +1,7 @@
 allprojects {
     group 'com.demo'
     version '1.0-SNAPSHOT'
+
 }
 
 buildscript {

@@ -1,6 +1,5 @@
 package javaobject.thread;
 
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.*;
 
@@ -8,7 +7,6 @@ import java.util.concurrent.*;
  * @author Warlock.deng
  * Created at 2019-09-29
  */
-@Slf4j
 public class FutureDemo {
 
     static class FutureCallable implements Callable<String> {
