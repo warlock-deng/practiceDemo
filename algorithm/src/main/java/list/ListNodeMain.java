@@ -1,7 +1,11 @@
 package list;
 
 
+import java.net.CacheRequest;
+
 /**
+ * 链表相关操作
+ *
  * @author warlock.deng
  * Created at 2021/4/22
  */
@@ -19,20 +23,64 @@ public class ListNodeMain {
         two.next.next.next.next = new ListNode(14);
         two.next.next.next.next.next = new ListNode(15);
 
-        ListNode node = mergeListNode(one, two);
+        //ListNode node = mergeListNode(one, two);
+        ListNode res = reverseList(two);
+
 
         String text = "";
     }
 
+    private static ListNode reverseList(ListNode head) {
+        ListNode result = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode temp = result;
+            result = curr;
+            curr = curr.next;
+            result.next = temp;
+
+//            ListNode next = curr.next;
+//            curr.next = prev;
+//            prev = curr;
+//            curr = next;
+        }
+        return result;
+    }
+
+    /**
+     * 反转链表
+     *
+     * @param head
+     * @return
+     */
+    private static ListNode reverseList1(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode newHead = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+
+    /**
+     * 合并两个有序链表
+     *
+     * @param one 第一个链表
+     * @param two 第二个链表
+     * @return 合并后的链表
+     */
     private static ListNode mergeListNode(ListNode one, ListNode two) {
-        ListNode head = new ListNode(0);
         if (one == null) {
             return two;
         }
         if (two == null) {
             return one;
         }
-        ListNode tem = head;//指针
+        //虚拟头节点
+        ListNode head = new ListNode(0);
+        //动态指针
+        ListNode tem = head;
         while (one != null || two != null) {
             if (one != null && two != null) {
                 if (one.value > two.value) {
@@ -58,7 +106,6 @@ public class ListNodeMain {
 
         return head.next;
     }
-
 
     private static class ListNode {
 
