@@ -2,8 +2,10 @@ package javaobject.thread;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import static java.lang.Thread.currentThread;
 import static java.lang.Thread.sleep;
 
 /**
@@ -11,6 +13,8 @@ import static java.lang.Thread.sleep;
  * Created at 2019/9/13
  */
 public class ThreadDemo {
+
+    private static int state = 0;
 
     public static void main(String[] args) throws Exception {
 
@@ -36,11 +40,60 @@ public class ThreadDemo {
 
         AtomicBoolean atomicBoolean = new AtomicBoolean();
 
-        ReentrantLock reentrantLock = new ReentrantLock();
+        ReentrantLock reentrantLock = new ReentrantLock(true);
+        int count = 60;
+        Thread thread1 = new Thread(() -> {
+            while (state < count) {
+               // reentrantLock.lock();
+                synchronized (a1) {
+                    if (state % 3 == 0) {
+                        System.out.println("a");
+                        state++;
+                    }
+                }
+               // reentrantLock.unlock();
+            }
+        });
+
+        Thread thread2 = new Thread(() -> {
+            while (state < count) {
+                //reentrantLock.lock();
+                synchronized (a1) {
+                    if (state % 3 == 1) {
+                        System.out.println("b");
+                        state++;
+                    }
+                }
+                //reentrantLock.unlock();
+            }
+        });
+
+        Thread thread3 = new Thread(() -> {
+            while (state < count) {
+                //reentrantLock.lock();
+                synchronized (a1) {
+                    if (state % 3 == 2) {
+                        System.out.println("c");
+                        state++;
+                    }
+                }
+                //reentrantLock.unlock();
+            }
+        });
+
+
+        thread1.start();
+        thread2.start();
+        thread3.start();
+
+
+
 
         ExecutorService executorService = Executors.newCachedThreadPool();
 
         ThreadLocal<String> threadLocal = new ThreadLocal<>();
+
+
     }
 
     private static void deadLock() {

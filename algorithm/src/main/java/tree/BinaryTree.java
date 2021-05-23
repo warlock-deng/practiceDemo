@@ -292,7 +292,6 @@ public class BinaryTree<E extends Comparable> {
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
         int[] nums = {5, 3, 6, 8, 4, 2, 7};
 
-
         for (int num : nums) {
             binaryTree.add(num);
         }
@@ -321,6 +320,9 @@ public class BinaryTree<E extends Comparable> {
 
         System.out.println("************");
         System.out.println(binaryTree);
+
+
+
     }
 
 }

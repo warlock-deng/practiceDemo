@@ -25,6 +25,8 @@ public class SortDemo {
 
         String c = "0";
         Integer[] tg = {50, 12, 65, 8, 23, 69, 99, 56, 65, 18, 12, 21, 2, 10, 7, 24};
+        Integer[] integers = {1, 2, 4, 4, 5};
+        int inde = binarySearch(integers, 5);
         //testFastSort(tg);
         //testMaopao(tg);
         //Integer[] mg = mergeSort(tg);
@@ -53,6 +55,26 @@ public class SortDemo {
         fastSort(tg, 0, tg.length - 1);
 
         String a = "";
+    }
+
+    private static int binarySearch(Integer[] tg, int v) {
+        int left = 0;
+        int right = tg.length - 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (tg[mid] == v) {
+                return mid;
+            }
+
+            if (tg[mid] < v) {
+                left = mid + 1;
+            }
+            if (tg[mid] > v) {
+                right = mid - 1;
+            }
+
+        }
+        return tg.length + 1;
     }
 
     /***
