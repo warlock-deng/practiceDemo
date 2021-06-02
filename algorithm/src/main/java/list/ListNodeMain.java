@@ -25,7 +25,7 @@ public class ListNodeMain {
         two.next.next.next.next.next = new ListNode(15);
 
         //ListNode node = mergeListNode(one, two);
-        // ListNode res = reverseList(two);
+         ListNode res = reverseList(two);
 
         //deleteNode(two, 2);
 
