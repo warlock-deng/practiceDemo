@@ -25,7 +25,7 @@ public class Test1 {
                 return mid;
             }
 
-            if (target > arr[mid] ) {
+            if (target > arr[mid]) {
                 if (arr[mid] < arr[right]) {
                     left = mid + 1;
                 } else {
@@ -36,15 +36,15 @@ public class Test1 {
             if (target < arr[mid] && arr[left] < arr[mid]) {
 
 
-
                 right = mid - 1;
-            }else{
+            } else {
 
             }
 
 
             return -1;
         }
-
+        return 0;
 
     }
+}
